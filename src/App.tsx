@@ -1,25 +1,62 @@
-import * as Material from "@mui/material"
-import * as Icon from "@mui/icons-material"
-import {useState} from "react";
+import "./App.css"
 
-const App = () => {
-    const [dialogOpen, setDialogOpen] = useState<boolean>(false)
+import {View, ViewMapper, ViewRouter} from "./View.tsx";
+import {AppBar, Box, Breadcrumbs, Button, Container, Divider, Toolbar, Typography} from "@mui/material";
+import {UrlUtil} from "./UrlUtil.ts";
 
-    const onClick = () => {
-        setDialogOpen(true);
+// todo: Would prefer if this was auto-registered instead of having to remember to add all items here...
+ViewMapper.add(View.Home);
+ViewMapper.add(View.SaveEditor);
+ViewMapper.add(View.ModEditor);
+
+export const App = () => {
+
+    const MainMenuButton = ({item, disabled}: { item: View, disabled?: boolean }) => {
+        const isActive = UrlUtil.getPath().includes(item.path);
+        return (<>
+            <Button color="inherit"
+                    aria-selected={isActive}
+                    href={item.path}
+                    onClick={() => {
+                    }}
+                    disabled={disabled}>
+                {item.name}
+            </Button>
+        </>)
     }
+
+    const path = UrlUtil.getPathParts();
 
     return (
         <div className="app">
-            <Material.Button variant="contained" onClick={onClick}>
-                Click me!
-            </Material.Button>
-            <Material.Dialog open={dialogOpen} onClose={() => setDialogOpen(false)}>
-                <Material.DialogTitle> You clicked me! <Icon.EmojiEmotions/></Material.DialogTitle>
-                <Material.DialogContent> This is some more content inside the dialog.</Material.DialogContent>
-            </Material.Dialog>
-        </div>
-    )
-};
+            <AppBar className="mainMenuAppBar" position="static">
+                <Toolbar>
+                    <a href="/">
+                        <Typography noWrap
+                                    fontSize="large"
+                                    fontWeight="800">
+                            Eu4 React Tools
+                        </Typography>
+                    </a>
 
-export default App
+                    <Divider variant="middle"></Divider>
+                    <Box className="mainMenuButtonContainer">
+                        <MainMenuButton item={View.Home}/>
+                        <MainMenuButton item={View.SaveEditor}/>
+                        <MainMenuButton item={View.ModEditor}/>
+                    </Box>
+                </Toolbar>
+            </AppBar>
+            
+            {path.length > 1 &&
+                <Container>
+                    <Breadcrumbs className="navBarBreadCrumb">
+                        {path.map((x, i) => <p key={i}>{x}</p>)}
+                    </Breadcrumbs>
+                </Container>
+            }
+
+            <ViewRouter/>
+        </div>
+    );
+};
