@@ -5,12 +5,14 @@ import {UrlUtil} from "./UrlUtil.ts";
 import {HomeView} from "./Views/HomeView.tsx";
 import {SaveEditorView} from "./Views/SaveEditor/SaveEditorView.tsx";
 import {ModEditorView} from "./Views/ModEditor/ModEditorView.tsx";
+import {TestingView} from "./Views/Testing/TestingView.tsx";
 
 export class View {
     public static readonly NotFound = new View("View not found", "/404", <NotFoundView/>);
     public static readonly Home = new View("Home", "/", <HomeView/>);
     public static readonly SaveEditor = new View("Save Editor", "/saveEditor", <SaveEditorView/>);
     public static readonly ModEditor = new View("Mod Editor", "/modEditor", <ModEditorView/>);
+    public static readonly Testing = new View("Testing", "/testing", <TestingView/>);
 
     constructor(name: string, path: string, element: React.ReactNode) {
         this.name = name;

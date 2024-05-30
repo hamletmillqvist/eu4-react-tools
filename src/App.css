@@ -19,4 +19,10 @@
   margin-bottom: -1em !important;
 }
 
+.secondary-text {
+  color: gray;
+  font-style: italic;
+  font-size: small;
+}
+
 /*# sourceMappingURL=App.css.map */

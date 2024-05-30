@@ -1,14 +1,12 @@
-import {ITabItem, Tabs} from "../../Components/Tabs.tsx";
 import {useState} from "react";
-import {SaveEditorTab} from "./SaveEditorTab.tsx";
+import {ITabItem, Tabs} from "../../Components/Tabs.tsx";
+import {TestTabDialogs} from "./TestTab1/TestTabDialogs.tsx";
 
-export const SaveEditorView = () => {
-
+export const TestingView = () => {
     const [tabs, setTabs] = useState<ITabItem[]>([
-        {
-            text: "Untitled",
-            element: <SaveEditorTab></SaveEditorTab>
-        },
+        {text: "Dialogs", element: <TestTabDialogs/>},
+        {text: "Test 2", element: <>And this is the second one</>},
+        {text: "Disabled tab", element: <>This one shouldn't be openable</>, disabled: true,},
     ]);
 
     const onAddTab = (tab: ITabItem) => {
