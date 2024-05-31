@@ -6,6 +6,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  margin:0;
+}
+
 .mainMenuAppBar {
   text-transform: uppercase;
   user-select: none;
@@ -17,6 +21,10 @@
 
 .navBarBreadCrumb {
   margin-bottom: -1em !important;
+}
+
+.mainMenu a {
+  margin-right: 24px;
 }
 
 .secondary-text {

@@ -10,7 +10,7 @@ interface ITab {
     element: React.ReactNode;
 }
 
-export const TestingView = () => {
+const TestingView = () => {
 
     const [selectedTab, setSelectedTab] = useState(0);
 
@@ -33,10 +33,13 @@ export const TestingView = () => {
                 </Tabs>
             </TabsContainer>
             {tabs.map(tab =>
-                <Box sx={{display: tab.id === selectedTab ? "initial" : "none"}}>
+                <Box key={tab.id}
+                     sx={{display: tab.id === selectedTab ? "initial" : "none"}}>
                     {tab.element}
                 </Box>
             )}
         </Box>
     );
 }
+
+export default TestingView;

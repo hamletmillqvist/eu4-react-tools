@@ -12,7 +12,7 @@ interface ITab {
 
 const defaultTabName = "Untitled";
 
-export const SaveEditorView = () => {
+const SaveEditorView = () => {
 
     const [selectedTabId, setSelectedTab] = useState(0);
     const [tabs, setTabs] = useState<ITab[]>([
@@ -68,7 +68,8 @@ export const SaveEditorView = () => {
             </TabsContainer>
             <Box>
                 {tabs.map(tab =>
-                    <Box sx={{display: selectedTabId == tab.id ? "visible" : "none"}}>
+                    <Box key={tab.id}
+                         sx={{display: selectedTabId == tab.id ? "visible" : "none"}}>
                         <SaveEditorTab onTabNameChanged={newName => onTabRename(tab, newName)}/>
                     </Box>
                 )}
@@ -76,3 +77,5 @@ export const SaveEditorView = () => {
         </Box>
     </>)
 }
+
+export default SaveEditorView;
