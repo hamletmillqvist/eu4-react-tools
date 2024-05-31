@@ -1,13 +1,17 @@
 import {useState} from "react";
-import {ISaveFile} from "./SaveFile.ts";
+import {SaveFile} from "./SaveFile.ts";
 import {SaveFileUtil} from "./SaveFileUtil.ts";
 import {FileUploadForm} from "../../Components/FileUploadForm.tsx";
-import {Alert, Snackbar} from "@mui/material";
+import {Alert, Box, Snackbar} from "@mui/material";
 
-export const SaveEditorTab = () => {
-    const [saveFile, setSaveFile] = useState<ISaveFile>();
+interface IProps {
+    onTabNameChanged: (name: string) => void;
+}
+
+export const SaveEditorTab = (props: IProps) => {
+    const [saveFile, setSaveFile] = useState<SaveFile>();
     const [error, setError] = useState<string | null>(null);
-    
+
     const onFileUploaded = async (file: File) => {
         const parseResult = await SaveFileUtil.parse(file);
 
@@ -18,6 +22,13 @@ export const SaveEditorTab = () => {
 
         setError(null);
         setSaveFile(parseResult.saveFile);
+
+        const saveName = parseResult.saveFile?.name.slice(0, parseResult.saveFile?.name.length - ".eu4".length);
+        if (saveName != null) {
+            props.onTabNameChanged(saveName);
+        } else {
+            props.onTabNameChanged("Unknown")
+        }
     }
 
     return (<>
@@ -27,5 +38,9 @@ export const SaveEditorTab = () => {
                 {error}
             </Alert>
         </Snackbar>
+
+        {saveFile && <Box>
+
+        </Box>}
     </>)
 }
