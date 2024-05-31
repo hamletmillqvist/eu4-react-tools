@@ -14,12 +14,14 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Layout/>}>
-                    <Route index element={<HomeView/>}/>
-                    <Route path="saveEditor" element={<SaveEditorView/>}/>
-                    <Route path="modEditor" element={<ModEditorView/>}/>
-                    <Route path="testing" element={<TestingView/>}/>
-                    <Route path="*" element={<NotFoundView/>}/>
+                <Route path="/">
+                    <Route path="/eu4-react-tools/" element={<Layout/>}>
+                        <Route index element={<HomeView/>}/>
+                        <Route path="saveEditor" element={<SaveEditorView/>}/>
+                        <Route path="modEditor" element={<ModEditorView/>}/>
+                        <Route path="testing" element={<TestingView/>}/>
+                        <Route path="*" element={<NotFoundView/>}/>
+                    </Route>
                 </Route>
             </Routes>
         </BrowserRouter>

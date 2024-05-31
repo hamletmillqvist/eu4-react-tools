@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "./eu4-react-tools",
+  base: "/eu4-react-tools",
   plugins: [react()],
 })

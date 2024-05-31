@@ -6,7 +6,7 @@ const Layout = () => {
         <Box>
             <AppBar className="mainMenuAppBar" position="static">
                 <Toolbar>
-                    <Link to="/">
+                    <Link to="">
                         <Typography noWrap
                                     fontSize="large"
                                     fontWeight="800">
@@ -17,10 +17,10 @@ const Layout = () => {
                     <Divider variant="middle"/>
                     
                     <Box className="mainMenu">
-                        <Link to="/">Home</Link>
-                        <Link to="/saveEditor">Save editor</Link>
-                        <Link to="/modEditor">Mod editor</Link>
-                        <Link to="/testing">Testing</Link>
+                        <Link to="">Home</Link>
+                        <Link to="saveEditor">Save editor</Link>
+                        <Link to="modEditor">Mod editor</Link>
+                        <Link to="testing">Testing</Link>
                     </Box>
                 </Toolbar>
             </AppBar>
