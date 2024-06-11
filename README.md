@@ -1,30 +1,21 @@
-# React + TypeScript + Vite
+# EU4 React Devtools
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Simplified eu4 dev-suite for quickly viewing and editing savefiles with support for mods planned.
+This is a hobby project and will only receive updates periodically. I am more than open for contributors
+and will be posting identified things that needs to be done in the 
+<a href="https://github.com/hamletmillqvist/eu4-react-tools/issues">Issues tab</a> above.
 
-Currently, two official plugins are available:
+## Technical information
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The app runs on <a href="https://nodejs.org/en">NODE.JS</a> through
+<a href="https://vitejs.dev/">VITE</a> using
+<a href="https://react.dev/">React</a> and <a href="https://mui.com/">Material UI</a>
+for simplified and quick development.
 
-## Expanding the ESLint configuration
+See currently active deployment at
+<a href="https://hamletmillqvist.github.io/eu4-react-tools/">EU4 React Tools Web</a>
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Contact
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+I am not active on the GitHub website, so for inquiries please email me at
+<a href="mailto:hamlet.millqvist@proton.me">hamlet.millqvist@proton.me<a/> 
