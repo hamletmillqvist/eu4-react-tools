@@ -6,6 +6,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  margin:0;
+}
+
 .mainMenuAppBar {
   text-transform: uppercase;
   user-select: none;
@@ -34,3 +38,20 @@
   margin-bottom: 8px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
+
+.bold {
+  font-weight: bold;
+}
+
+.dialog-table {
+  width: 100%;
+  
+  td {
+    padding: 8px 8px 0 0;
+
+    .MuiTextField-root {
+      width: 100%;
+    }
+  }
+}
+

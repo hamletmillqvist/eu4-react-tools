@@ -1,7 +1,7 @@
 import {Button} from "@mui/material";
 import {Link} from "react-router-dom";
 
-export const NotFoundView = ({}: {}) => {
+export const NotFoundView = () => {
     return (
         <>
             <h1>404 - Page not found</h1>

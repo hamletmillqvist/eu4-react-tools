@@ -6,9 +6,9 @@ import HomeView from "./Pages/HomeView.tsx";
 import {NotFoundView} from "./Pages/NotFoundView.tsx";
 import ReactDOM from "react-dom/client";
 import React from "react";
-import SaveEditorView from "./Pages/SaveEditor/SaveEditorView.tsx";
-import TestingView from "./Pages/Testing/TestingView.tsx";
 import ModEditorView from "./Pages/ModEditor/ModEditorView.tsx";
+import SaveEditorView from "./Pages/SaveEditor/Components/SaveEditorView.tsx";
+import TestingView from "./Pages/Testing/TestingView.tsx";
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>

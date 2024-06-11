@@ -1,8 +1,9 @@
 import {useState} from "react";
-import {SaveFile} from "./SaveFile.ts";
-import {SaveFileUtil} from "./SaveFileUtil.ts";
-import {FileUploadForm} from "../../Components/FileUploadForm.tsx";
+import {SaveFile} from "../SaveFile.ts";
+import {SaveFileUtil} from "../SaveFileUtil.ts";
+import {FileUploadForm} from "../../../Components/FileUploadForm.tsx";
 import {Alert, Box, Snackbar} from "@mui/material";
+import SaveFileTreeView from "./SaveFileTreeView.tsx";
 
 interface IProps {
     onTabNameChanged: (name: string) => void;
@@ -39,8 +40,13 @@ export const SaveEditorTab = (props: IProps) => {
             </Alert>
         </Snackbar>
 
-        {saveFile && <Box>
-
-        </Box>}
+        {saveFile &&
+            <Box sx={{display: "flex"}}>
+                <SaveFileTreeView saveFile={saveFile}/>
+                <Box>
+                    Lorem ipsum dolor sit amet
+                </Box>
+            </Box>
+        }
     </>)
 }

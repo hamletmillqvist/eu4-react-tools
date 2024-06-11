@@ -7,7 +7,7 @@
 }
 
 body {
-  margin:0;
+  margin: 0;
 }
 
 .mainMenuAppBar {
@@ -36,6 +36,20 @@ body {
 .tabs-container {
   margin-bottom: 8px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.dialog-table {
+  width: 100%;
+}
+.dialog-table td {
+  padding: 8px 8px 0 0;
+}
+.dialog-table td .MuiTextField-root {
+  width: 100%;
 }
 
 /*# sourceMappingURL=App.css.map */

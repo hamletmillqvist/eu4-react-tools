@@ -3,7 +3,7 @@ import {Box, Tab} from "@mui/material";
 import * as Material from "@mui/material";
 import {Add} from "@mui/icons-material";
 import {SaveEditorTab} from "./SaveEditorTab.tsx";
-import {TabsContainer} from "../../Components/TabsContainer.tsx";
+import TabsContainer from "../../../Components/TabsContainer.tsx";
 
 interface ITab {
     id: number;

@@ -4,8 +4,10 @@ interface IProps {
     children: React.ReactNode;
 }
 
-export const TabsContainer = (props: IProps) => {
+const TabsContainer = (props: IProps) => {
     return <Box className="tabs-container">
         {props.children}
     </Box>
 }
+
+export default TabsContainer;

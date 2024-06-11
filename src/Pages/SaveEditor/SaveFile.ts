@@ -1,4 +1,4 @@
-import {Scope} from "./Scope.ts";
+import Scope from "./Scope.ts";
 
 export class SaveFile {
     constructor(name: string, rootScope: Scope) {

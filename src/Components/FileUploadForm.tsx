@@ -1,5 +1,5 @@
-import {Box, Button} from "@mui/material";
-import {Loop, UploadFile} from "@mui/icons-material";
+import {Box, Button, CircularProgress} from "@mui/material";
+import {UploadFile} from "@mui/icons-material";
 import {ChangeEvent, createRef, useState} from "react";
 
 interface IProps {
@@ -54,10 +54,19 @@ export const FileUploadForm = (props: IProps) => {
                 component="label"
                 role={undefined}
                 variant="contained"
-                startIcon={isLoading ? <Loop/> : <UploadFile/>}
-                onClick={onUploadClick}>
+                startIcon={<UploadFile/>}
+                onClick={onUploadClick}
+                disabled={isLoading}>
                 {fileMetadata?.name ?? props.buttonText ?? "Upload file"}
+                {isLoading &&
+                    <CircularProgress size={24}
+                                      disableShrink
+                                      sx={{
+                                          position: "absolute"
+                                      }}/>
+                }
             </Button>
+            
             {props.accepts &&
                 <div className="secondary-text">Filetype ({props.accepts})</div>
             }

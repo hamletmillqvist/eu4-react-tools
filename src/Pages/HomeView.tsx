@@ -1,4 +1,4 @@
-const HomeView = ({}: {}) => {
+const HomeView = () => {
     return (
         <>
             <h1>Eu4 React Tools</h1>

@@ -1,24 +1,17 @@
 import {useState} from "react";
 import {TestTabDialogs} from "./TestTab1/TestTabDialogs.tsx";
 import {Box, Tab, Tabs} from "@mui/material";
-import {TabsContainer} from "../../Components/TabsContainer.tsx";
-
-interface ITab {
-    id: number;
-    name: string;
-    disabled?: boolean;
-    element: React.ReactNode;
-}
+import TabsContainer from "../../Components/TabsContainer.tsx";
 
 const TestingView = () => {
 
     const [selectedTab, setSelectedTab] = useState(0);
 
-    const [tabs, setTabs] = useState<ITab[]>([
+    const tabs = [
         {id: 0, name: "Dialogs", element: <TestTabDialogs/>},
         {id: 1, name: "Test 2", element: <>And this is the second one</>},
         {id: 2, name: "Disabled tab", element: <>This one shouldn't be openable</>, disabled: true,},
-    ]);
+    ];
 
     return (
         <Box>

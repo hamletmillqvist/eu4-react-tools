@@ -9,7 +9,7 @@ export const TestTabDialogs = () => {
             <Button variant="contained" startIcon={<OpenInBrowser/>} onClick={() => setDialogOpen(true)}>
                 Open dialog
             </Button>
-            <Dialog open={dialogOpen} onClose={(_event, _reason) => setDialogOpen(false)}>
+            <Dialog open={dialogOpen} onClose={() => setDialogOpen(false)}>
                 <DialogTitle>Dialog title</DialogTitle>
                 <DialogContent>
                     Dialog content stuff
