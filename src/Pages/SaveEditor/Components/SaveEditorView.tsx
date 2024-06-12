@@ -1,5 +1,5 @@
-import {useState} from "react";
-import {Alert, Box, Snackbar} from "@mui/material";
+import {useMemo, useState} from "react";
+import {Alert, Box, Button, Snackbar} from "@mui/material";
 import {SaveFile} from "../SaveFile.ts";
 import {SaveFileUtil} from "../SaveFileUtil.ts";
 import {FileUploadForm} from "../../../Components/FileUploadForm.tsx";
@@ -19,6 +19,15 @@ const SaveEditorView = () => {
 
         setError(null);
         setSaveFile(parseResult.saveFile);
+    }
+
+    const saveName = useMemo(() => {
+        return saveFile?.name.slice(0, saveFile?.name.length - ".eu4".length);
+    }, [saveFile]);
+
+    const onSaveClick = () => {
+        // todo: generate save file and download
+        setError("This feature is not yet implemented");
     };
 
     return (<>
@@ -27,16 +36,24 @@ const SaveEditorView = () => {
                                       accepts=".eu4"/>}
         <Snackbar open={!!error}
                   autoHideDuration={10_000}
+                  sx={{width: "100%"}}
                   onClick={() => setError(null)}>
-            <Alert onClick={() => setError(null)} severity="error">
+            <Alert onClick={() => setError(null)}
+                   sx={{width: "100%"}}
+                   severity="error">
                 {error}
             </Alert>
         </Snackbar>
 
         {saveFile &&
             <>
+                <Box>
+                    <Box sx={{float: "right"}}>
+                        <Button variant="contained" onClick={onSaveClick}>Save</Button>
+                    </Box>
+                    <h1>{saveName}</h1>
+                </Box>
                 <Box sx={{display: "flex", gap: 8}}>
-
                     <Box sx={{flex: 1}}>
                         <SaveFileTreeView saveFile={saveFile}/>
                     </Box>
