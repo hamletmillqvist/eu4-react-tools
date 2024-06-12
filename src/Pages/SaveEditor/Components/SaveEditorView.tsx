@@ -1,80 +1,52 @@
 import {useState} from "react";
-import {Box, Tab} from "@mui/material";
-import * as Material from "@mui/material";
-import {Add} from "@mui/icons-material";
-import {SaveEditorTab} from "./SaveEditorTab.tsx";
-import TabsContainer from "../../../Components/TabsContainer.tsx";
-
-interface ITab {
-    id: number;
-    name: string;
-}
-
-const defaultTabName = "Untitled";
+import {Alert, Box, Snackbar} from "@mui/material";
+import {SaveFile} from "../SaveFile.ts";
+import {SaveFileUtil} from "../SaveFileUtil.ts";
+import {FileUploadForm} from "../../../Components/FileUploadForm.tsx";
+import SaveFileTreeView from "./SaveFileTreeView.tsx";
 
 const SaveEditorView = () => {
+    const [saveFile, setSaveFile] = useState<SaveFile>();
+    const [error, setError] = useState<string | null>(null);
 
-    const [selectedTabId, setSelectedTab] = useState(0);
-    const [tabs, setTabs] = useState<ITab[]>([
-        {id: 0, name: defaultTabName,}
-    ]);
+    const onFileUploaded = async (file: File) => {
+        const parseResult = await SaveFileUtil.parse(file);
 
-    const onTabClick = (tab: ITab) => {
-        setSelectedTab(tab.id)
-    }
+        if (parseResult.errorText) {
+            setError(parseResult.errorText);
+            return false;
+        }
 
-    const onAddClick = () => {
-        const newTab: ITab = {
-            id: tabs.length,
-            name: defaultTabName,
-        };
-        setTabs(prevState => [...prevState, newTab]);
-    }
-
-    const onRemoveTab = (tab: ITab) => {
-        setTabs(prevState => [...prevState].filter(f => f.id != tab.id));
-    }
-
-    const onTabRename = (tab: ITab, newName: string) => {
-        tab.name = newName;
-        setTabs([...tabs]);
-    }
+        setError(null);
+        setSaveFile(parseResult.saveFile);
+    };
 
     return (<>
-        <Box>
-            <TabsContainer>
-                <Material.Tabs value={selectedTabId}>
-                    {tabs.map(tab =>
-                        <Tab key={tab.id}
-                             label={tab.name}
-                             onClick={() => onTabClick(tab)}
-                             sx={{
-                                 ":hover": {
-                                     color: "#0872cf",
-                                 },
-                                 textTransform: "inherit",
-                             }}/>
-                    )}
-                    <Tab key={tabs.length}
-                         onClick={onAddClick}
-                         sx={{
-                             margin: 0,
-                             minWidth: 0,
-                             ":hover": {color: "#0872cf"}
-                         }}
-                         icon={<Add/>}
-                         iconPosition={"end"}/>
-                </Material.Tabs>
-            </TabsContainer>
-            <Box>
-                {tabs.map(tab =>
-                    <Box key={tab.id}
-                         sx={{display: selectedTabId == tab.id ? "visible" : "none"}}>
-                        <SaveEditorTab onTabNameChanged={newName => onTabRename(tab, newName)}/>
+        {!saveFile && <FileUploadForm onFileUploaded={onFileUploaded}
+                                      buttonText="Upload savefile"
+                                      accepts=".eu4"/>}
+        <Snackbar open={!!error}
+                  autoHideDuration={10_000}
+                  onClick={() => setError(null)}>
+            <Alert onClick={() => setError(null)} severity="error">
+                {error}
+            </Alert>
+        </Snackbar>
+
+        {saveFile &&
+            <>
+                <Box sx={{display: "flex", gap: 8}}>
+
+                    <Box sx={{flex: 1}}>
+                        <SaveFileTreeView saveFile={saveFile}/>
                     </Box>
-                )}
-            </Box>
-        </Box>
+                    <Box sx={{flex: 1}}>
+                        <p>Lorem ipsum dolor sit amet</p>
+
+                    </Box>
+                </Box>
+            </>
+        }
     </>)
 }
 
