@@ -7,7 +7,7 @@
 }
 
 body {
-  margin:0;
+  margin: 0;
 }
 
 .mainMenuAppBar {
@@ -34,6 +34,18 @@ body {
   font-size: small;
 }
 
+.island {
+  margin-top: 0.5em;
+  padding: 1em;
+
+  .islandHeading {
+    h2 {
+      margin-bottom: 0.5em;
+      margin-top: -0.2em;
+    }
+  }
+}
+
 .tabs-container {
   margin-bottom: 8px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
@@ -45,7 +57,7 @@ body {
 
 .dialog-table {
   width: 100%;
-  
+
   td {
     padding: 8px 8px 0 0;
 
@@ -55,3 +67,6 @@ body {
   }
 }
 
+.alerterBase {
+  border-bottom: 3px solid;
+}

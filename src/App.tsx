@@ -9,6 +9,8 @@ import React from "react";
 import ModEditorView from "./Pages/ModEditor/ModEditorView.tsx";
 import SaveEditorView from "./Pages/SaveEditor/Components/SaveEditorView.tsx";
 import TestingView from "./Pages/Testing/TestingView.tsx";
+import AppAlerter from "./AppAlerter.tsx";
+
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
@@ -25,5 +27,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
                 </Route>
             </Routes>
         </BrowserRouter>
+
+        <AppAlerter/>
     </React.StrictMode>,
 )

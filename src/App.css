@@ -33,6 +33,15 @@ body {
   font-size: small;
 }
 
+.island {
+  margin-top: 0.5em;
+  padding: 1em;
+}
+.island .islandHeading h2 {
+  margin-bottom: 0.5em;
+  margin-top: -0.2em;
+}
+
 .tabs-container {
   margin-bottom: 8px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
@@ -50,6 +59,10 @@ body {
 }
 .dialog-table td .MuiTextField-root {
   width: 100%;
+}
+
+.alerterBase {
+  border-bottom: 3px solid;
 }
 
 /*# sourceMappingURL=App.css.map */
