@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import {Alert, AlertColor, AlertTitle, IconButton, Slide, Snackbar} from "@mui/material";
-import Alerter, {IAlerterCallbackProps} from "./Alerter.ts";
+import Alerter, {IAlerterCallbackProps} from "Utils/Alerter.ts";
 import {Close} from "@mui/icons-material";
 
 let timeoutHook: number | null = null;

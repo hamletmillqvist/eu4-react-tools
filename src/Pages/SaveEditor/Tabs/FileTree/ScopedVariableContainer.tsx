@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 import {Box, ListItemIcon, ListItemText, Menu, MenuItem, MenuList} from "@mui/material";
 import {Delete, Edit} from "@mui/icons-material";
-import VariableEditorDialog from "../Dialogs/VariableEditorDialog.tsx";
-import ScopeVariable from "../ScopeVariable.ts";
+import VariableEditorDialog from "./VariableEditorDialog.tsx";
+import ScopeVariable from "Types/ScopeVariable.ts";
 
 interface IScopeVariableContainerProps {
     variable: ScopeVariable;

@@ -1,6 +1,6 @@
-import Scope from "./Scope.ts";
+import Scope from "Types/Scope";
 
-export class SaveFile {
+export default class SaveFile {
     constructor(name: string, rootScope: Scope) {
         this.name = name;
         this.rootScope = rootScope;

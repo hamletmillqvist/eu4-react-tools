@@ -1,6 +1,6 @@
 import {Box, Button, Dialog, DialogContent, DialogTitle, TextField} from "@mui/material";
 import {useEffect, useState} from "react";
-import ScopeVariable from "../ScopeVariable.ts";
+import ScopeVariable from "Types/ScopeVariable.ts";
 
 interface IProps {
     open: boolean;

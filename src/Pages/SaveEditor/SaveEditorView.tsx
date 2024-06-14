@@ -1,10 +1,10 @@
 import {useMemo, useState} from "react";
 import {Box, Button} from "@mui/material";
-import {SaveFile} from "../SaveFile.ts";
-import {SaveFileUtil} from "../SaveFileUtil.ts";
-import {FileUploadForm} from "../../../Components/FileUploadForm.tsx";
-import SaveFileTreeView from "./SaveFileTreeView.tsx";
-import Alerter from "../../../Alerter.ts";
+import SaveFile from "Types/SaveFile.ts";
+import SaveFileUtil from "Utils/SaveFileUtil.ts";
+import FileUploadForm from "Components/FileUploadForm.tsx";
+import SaveFileTreeView from "./Tabs/FileTree/SaveFileTreeView.tsx";
+import Alerter from "Utils/Alerter.ts";
 
 const SaveEditorView = () => {
     const [saveFile, setSaveFile] = useState<SaveFile>();

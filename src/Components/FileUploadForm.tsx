@@ -14,7 +14,7 @@ interface IFileMetadata {
     type: string;
 }
 
-export const FileUploadForm = (props: IProps) => {
+const FileUploadForm = (props: IProps) => {
 
     const [fileMetadata, setFileMetadata] = useState<IFileMetadata | null>();
     const [isLoading, setIsLoading] = useState(false);
@@ -73,3 +73,5 @@ export const FileUploadForm = (props: IProps) => {
         </Box>
     )
 }
+
+export default FileUploadForm;

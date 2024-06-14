@@ -1,12 +1,12 @@
-import {SaveFile} from "./SaveFile.ts";
-import Scope from "./Scope.ts";
+import SaveFile from "Types/SaveFile";
+import Scope from "Types/Scope.ts";
 
 export class ParseResult {
     errorText?: string;
     saveFile?: SaveFile;
 }
 
-export class SaveFileUtil {
+export default class SaveFileUtil {
     public static parse = async (file: File): Promise<ParseResult> => {
         const result = new ParseResult();
 

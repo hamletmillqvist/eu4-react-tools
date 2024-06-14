@@ -1,6 +1,6 @@
-import Scope from "./Scope.ts";
+import Scope from "Types/Scope.ts";
 
-class ScopeVariable {
+export default class ScopeVariable {
     constructor(name: string, value: string | null, scope: Scope) {
         this.name = name;
         this.value = value;
@@ -34,5 +34,3 @@ class ScopeVariable {
         return name;
     }
 }
-
-export default ScopeVariable;

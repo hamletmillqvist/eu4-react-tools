@@ -1,6 +1,6 @@
 import {Box} from "@mui/material";
 import TreeItem from "./TreeItem.tsx";
-import {SaveFile} from "../SaveFile.ts";
+import SaveFile from "Types/SaveFile.ts";
 
 interface IProps {
     saveFile: SaveFile;

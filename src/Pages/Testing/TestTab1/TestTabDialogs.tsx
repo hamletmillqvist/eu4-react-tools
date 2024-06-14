@@ -11,8 +11,8 @@ import {
 } from "@mui/material";
 import {OpenInBrowser} from "@mui/icons-material";
 import {useState} from "react";
-import Alerter from "../../../Alerter.ts";
-import Island from "../../../Components/Island.tsx";
+import Alerter from "Utils/Alerter.ts";
+import Island from "Components/Island.tsx";
 
 export const TestTabDialogs = () => {
     const [dialogOpen, setDialogOpen] = useState(false);

@@ -1,8 +1,8 @@
 import {useState} from "react";
 import {Box} from "@mui/material";
 import {AddBox, Remove} from "@mui/icons-material";
-import Scope from "../Scope.ts";
-import ScopeVariable from "../ScopeVariable.ts";
+import Scope from "Types/Scope.ts";
+import ScopeVariable from "Types/ScopeVariable.ts";
 import ScopeVariableContainer from "./ScopedVariableContainer.tsx";
 
 interface ITreeItemProps {

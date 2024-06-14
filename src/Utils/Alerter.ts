@@ -6,7 +6,7 @@ export interface IAlerterCallbackProps {
     severity: AlertColor;
 }
 
-class Alerter {
+export default class Alerter {
     private static callback: (props: IAlerterCallbackProps) => void;
 
     private static validate() {
@@ -39,5 +39,3 @@ class Alerter {
         this.callback({severity: "error", message, timeout});
     }
 }
-
-export default Alerter;

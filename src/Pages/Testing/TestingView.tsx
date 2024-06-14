@@ -1,7 +1,7 @@
 import {useState} from "react";
 import {TestTabDialogs} from "./TestTab1/TestTabDialogs.tsx";
 import {Box, Tab, Tabs} from "@mui/material";
-import TabsContainer from "../../Components/TabsContainer.tsx";
+import TabsContainer from "Components/TabsContainer.tsx";
 
 const TestingView = () => {
 
